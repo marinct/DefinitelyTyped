@@ -152,6 +152,8 @@ export type OpenMode = "r" | "r+" | "w" | "wx" | "xw" | "w+" | "xw+" | "a" | "ax
 
 export namespace utils {
     function parseKey(data: Buffer | string | ParsedKey, passphrase?: Buffer | string): ParsedKey | Error;
+    function generateKeyPair(keyType: string, options: object, callback: Function) : void;
+    function generateKeyPairSync(keyType: string, options?: object) : object;
     namespace sftp {
         enum OPEN_MODE {
             READ = 0x00000001,
